@@ -6,6 +6,9 @@ public class GridExamConsole implements ExamConsole {
 
 	private Exam exam;
 	
+	public GridExamConsole() {
+	}
+	
 	public GridExamConsole(Exam exam) {
 		this.exam = exam;
 	}
@@ -16,6 +19,11 @@ public class GridExamConsole implements ExamConsole {
 		System.out.printf("total is %d \n", exam.total());
 		System.out.printf("avg is %f \n", exam.avg());
 		System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+	}
+
+	@Override
+	public void setExam(Exam exam) {
+		this.exam = exam;
 	}
 
 }

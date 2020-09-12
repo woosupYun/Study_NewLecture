@@ -1,17 +1,28 @@
 package spring.di;
 
-import spring.di.entity.Exam;
-import spring.di.entity.NewLecExam;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import spring.di.ui.ExamConsole;
-import spring.di.ui.GridExamConsole;
-import spring.di.ui.InlineExamConsole;
 
 public class Program {
 	public static void main(String[] args) {
-		
+
+		/* 스프링에서 지시하는 방법으로 코드를 변경
 		Exam exam = new NewLecExam();
-		//ExamConsole console = new InlineExamConsole(exam);
 		ExamConsole console = new GridExamConsole(exam);
+		
+		console.setExam(exam);
+		*/
+		
+		ApplicationContext context =
+				new ClassPathXmlApplicationContext("spring/di/setting.xml");
+		
+		// 형식변환으로 값 꺼내기
+		//ExamConsole console = (ExamConsole) context.getBean("console");
+		
+		// 해당 형식에 맞는 값으로 꺼내달라고 하기
+		ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
 	}
 }
