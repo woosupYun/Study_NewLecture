@@ -4,7 +4,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Exam exam = new NewLecExam(); -->
-	<bean id="exam" class="spring.di.entity.NewLecExam" />
+	<bean id="exam" class="spring.di.entity.NewLecExam">
+		<property name="kor" value="10"/>
+		<property name="eng" value="10"/>
+		<property name="math" value="10"/>
+		<property name="com" value="10"/>
+	</bean>
 	
 	<!-- ExamConsole console = new GridExamConsole(exam); -->
 	<bean id="console" class="spring.di.ui.InlineExamConsole">
