@@ -6,6 +6,17 @@ public class NewLecExam implements Exam {
 	private int eng;
 	private int math;
 	private int com;
+	
+	public NewLecExam() {
+		
+	}
+
+	public NewLecExam(int kor, int eng, int math, int com) {
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+		this.com = com;
+	}
 
 	public int getKor() {
 		return kor;
@@ -48,6 +59,11 @@ public class NewLecExam implements Exam {
 	public float avg() {
 		// TODO Auto-generated method stub
 		return total() / 4.0f;
+	}
+
+	@Override
+	public String toString() {
+		return "NewLecExam [kor=" + kor + ", eng=" + eng + ", math=" + math + ", com=" + com + "]";
 	}
 
 }
