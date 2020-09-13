@@ -1,13 +1,8 @@
 package spring.di;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import spring.di.entity.Exam;
-import spring.di.entity.NewLecExam;
 import spring.di.ui.ExamConsole;
 
 public class Program {
@@ -22,13 +17,14 @@ public class Program {
 		*/
 		
 		ApplicationContext context =
-				new ClassPathXmlApplicationContext("spring/di/setting.xml");
+				new AnnotationConfigApplicationContext(NewlecDIConfig.class);
+				//new ClassPathXmlApplicationContext("spring/di/setting.xml");	
 		
 		//Exam exam = context.getBean(Exam.class);
 		//System.out.println(exam.toString());
 		
 		// 형식변환으로 값 꺼내기
-		ExamConsole console = (ExamConsole) context.getBean("console");
+		 ExamConsole console = (ExamConsole) context.getBean("console");
 				
 		// 해당 형식에 맞는 값으로 꺼내달라고 하기
 		//ExamConsole console = context.getBean(ExamConsole.class);
