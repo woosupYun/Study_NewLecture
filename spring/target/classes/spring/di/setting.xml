@@ -11,8 +11,10 @@
 	<context:annotation-config />
 	
 	<!-- Exam exam = new NewLecExam(); -->
+	<!-- 
 	<bean id="exam1" class="spring.di.entity.NewLecExam" p:kor="10" p:eng="10"/>
 	<bean id="exam2" class="spring.di.entity.NewLecExam" p:kor="20" p:eng="20"/>
+	 -->
 	<!--
 	<bean id="exam" class="spring.di.entity.NewLecExam">
 		//인덱스를 사용한 생성자 값 넣기
