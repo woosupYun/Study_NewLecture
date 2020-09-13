@@ -1,9 +1,13 @@
 package spring.di;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring.di.entity.Exam;
+import spring.di.entity.NewLecExam;
 import spring.di.ui.ExamConsole;
 
 public class Program {
@@ -29,5 +33,12 @@ public class Program {
 		// 해당 형식에 맞는 값으로 꺼내달라고 하기
 		//ExamConsole console = context.getBean(ExamConsole.class);
 		console.print();
+		
+		List<Exam> exams = (List<Exam>) context.getBean("exams");
+		//exams.add(new NewLecExam(1,1,1,1));
+		
+		for(Exam e : exams){
+			System.out.println(e);
+		}
 	}
 }
