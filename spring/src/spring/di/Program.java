@@ -24,8 +24,8 @@ public class Program {
 		ApplicationContext context =
 				new ClassPathXmlApplicationContext("spring/di/setting.xml");
 		
-		Exam exam = context.getBean(Exam.class);
-		System.out.println(exam.toString());
+		//Exam exam = context.getBean(Exam.class);
+		//System.out.println(exam.toString());
 		
 		// 형식변환으로 값 꺼내기
 		ExamConsole console = (ExamConsole) context.getBean("console");

@@ -11,7 +11,8 @@
 	<context:annotation-config />
 	
 	<!-- Exam exam = new NewLecExam(); -->
-	<bean id="exam" class="spring.di.entity.NewLecExam" p:kor="10" p:eng="10"/>
+	<bean id="exam1" class="spring.di.entity.NewLecExam" p:kor="10" p:eng="10"/>
+	<bean id="exam2" class="spring.di.entity.NewLecExam" p:kor="20" p:eng="20"/>
 	<!--
 	<bean id="exam" class="spring.di.entity.NewLecExam">
 		//인덱스를 사용한 생성자 값 넣기
@@ -30,11 +31,6 @@
 		<!-- console.setExam(exam); -->
 		<!-- <property name="exam" ref="exam" />  -->
 	</bean>
-	
-	<util:list id="exams" list-class="java.util.ArrayList">
-		<bean id="exam" class="spring.di.entity.NewLecExam" p:kor="1" p:eng="1"/>
-		<ref bean="exam" />
-	</util:list>
 	
 	<!-- 
 	<bean id="exams" class="java.util.ArrayList">
